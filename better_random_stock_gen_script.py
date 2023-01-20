@@ -97,37 +97,61 @@ profrep.to_file('RSD_PROFILING.html')
 
 
 plt.plot(df['Date'],df['Open'])
+plt.xlabel('Date')
+plt.ylabel('Open')
+plt.title('DvO - Date vs Open')
 plt.savefig('DvO.png')
 plt.close()
 
 
 plt.plot(df['Date'],df['Close'])
+plt.xlabel('Date')
+plt.ylabel('Close')
+plt.title('DvC - Date vs Close')
 plt.savefig('DvC.png')
 plt.close()
 
 
 plt.plot(df['Date'],df['High'])
+plt.xlabel('Date')
+plt.ylabel('High')
+plt.title('DvH - Date vs High')
 plt.savefig('DvH.png')
 plt.close()
 
 
 plt.plot(df['Date'],df['Low'])
+plt.xlabel('Date')
+plt.ylabel('Low')
+plt.title('DvL - Date vs Low')
 plt.savefig('DvL.png')
 plt.close()
 
 plt.scatter(df['Date'],df['Open'])
+plt.xlabel('Date')
+plt.ylabel('Open')
+plt.title('DvO - Date vs Open')
 plt.savefig('openscatter.png')
 plt.close()
 
 plt.scatter(df['Date'],df['Close'])
+plt.xlabel('Date')
+plt.ylabel('Close')
+plt.title('DvC - Date vs Close')
 plt.savefig('closescatter.png')
 plt.close()
 
 plt.scatter(df['Date'],df['High'])
+plt.xlabel('Date')
+plt.ylabel('High')
+plt.title('DvH - Date vs High')
 plt.savefig('highscatter.png')
 plt.close()
 
 plt.scatter(df['Date'],df['Low'])
+plt.xlabel('Date')
+plt.ylabel('Low')
+plt.title('DvL - Date vs Low')
 plt.savefig('lowscatter.png')
 plt.close()
 
