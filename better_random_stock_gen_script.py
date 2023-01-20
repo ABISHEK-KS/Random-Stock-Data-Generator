@@ -1,10 +1,8 @@
 import random
-import statistics
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas_profiling as pp
-import statsmodels.api as sm
 from statsmodels.tsa.seasonal import seasonal_decompose
 from fpdf import FPDF
 datelist=[]
