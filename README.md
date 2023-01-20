@@ -1,4 +1,6 @@
 # Random-Stock-Data-Generator
+
+
 Hello everybody !  
 I created a random stock generator using random module in python. Basically , it creates a dataframe and does the following   
 1) Create profiling reports in html covering variable overviews   
@@ -27,4 +29,6 @@ POINTS TO NOTE:
  ![image](https://user-images.githubusercontent.com/97246536/213773089-81a0356d-85f6-4fb6-88c9-9a7c601b5132.png)
 
 ![DvO](https://user-images.githubusercontent.com/97246536/213773145-93f7a791-0a87-4012-8308-e80438257bff.png)
+
+PLEASE DO NOT COPY OR STEAL MY CODE.   
 
