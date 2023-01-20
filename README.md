@@ -2,7 +2,7 @@
 
 
 Hello everybody !  
-I created a random stock generator using random module in python. Basically , it creates a dataframe and does the following   
+I created a random stock data generator using random module in python. Basically , it creates a dataframe and does the following   
 1) Create profiling reports in html covering variable overviews   
 2) Write data to excel sheet   
 3) Create a pdf report demonstrating seasonal dependencies (TSA) and scatter and line plots for four parameters (high,low,open close) using mpdf  
