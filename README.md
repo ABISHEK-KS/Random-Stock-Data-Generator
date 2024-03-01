@@ -6,15 +6,6 @@ I created a random stock data generator using random module in python. Basically
 1) Create profiling reports in html covering variable overviews   
 2) Write data to excel sheet   
 3) Create a pdf report demonstrating seasonal dependencies (TSA) and scatter and line plots for four parameters (high,low,open close) using mpdf  
-
-POINTS TO NOTE:   
-
- I have tested the code over 50 times , and I have found few critical points for which I shall update my code as soon as possible  
- 
- 1) There are some discrepancies in the values of high and low. For instance , the value of high on one particular day might be the lowest of the set of all four parameters on the given date  
- 2) There's a difference between close value on a given day and the opening value for the next day , this again is due to random module's degree of randomness (or as people call it entropy)  
- 
- 2)----> can be attributed to hypothetical corporate scenarios in the generation   
  
  NOTE :  
  
