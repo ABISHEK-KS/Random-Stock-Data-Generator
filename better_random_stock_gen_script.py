@@ -1,12 +1,15 @@
 import random
+import statistics
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas_profiling as pp
+import statsmodels.api as sm
 from statsmodels.tsa.seasonal import seasonal_decompose
+import datetime
 from fpdf import FPDF
 datelist=[]
-size=int(input('ENTER SIZE/NO: OF DAYS : '))
+size=500
 
 
 yearlist=[x for x in range(1980,2024)]
@@ -15,40 +18,7 @@ daylist=[x for x in range(1,32)]
 year=random.choice(yearlist)
 month=random.choice(monthlist)
 day=random.choice(daylist)
-
-
-for j in range(size): 
-    if month==8 and day==30: 
-        day=31
-    if month==2 and year%4==0 and day==28:
-        day+=1
-    if month==2 and year%4==0 and day==29: 
-        month+=1
-        day=1
-    if month==2 and year%4!=0 and day==29: 
-        day=1
-        month+=1        
-
-    if month%2==0 and month!=8 and day>30: 
-        month+=1
-        day=1
-    if month==8 and day>31:
-        day=1
-        month+=1    
-    if month%2==1 and day>31: 
-        month+=1
-        day=1
-    if month>12: 
-        month=month%12
-        year+=1
-    if month==12 and day>31: 
-        day=1     
-        month=1  
-        year+=1
-                      
-    date=str(day)+'-'+str(month)+'-'+str(year)
-    datelist.append(date)
-    day+=1
+datelist = pd.date_range(1980, periods=size).tolist()
 openlist=[]
 closelist=[]
 highlist=[]
@@ -56,8 +26,8 @@ lowlist=[]
 openval=[]
 randomopenval=round(random.uniform(0.0,99999.0),2)
 
-upperbound=randomopenval-(randomopenval*0.095)
-lowerbound=randomopenval+(randomopenval*0.095)
+upperbound=randomopenval+(randomopenval*0.095)
+lowerbound=randomopenval-(randomopenval*0.095)
 
 randomcloseval=round(random.uniform(upperbound,lowerbound),2)
 randomhighval=round(random.uniform(upperbound,lowerbound),2)
@@ -72,8 +42,8 @@ openlist.append(randomopenval)
 closelist.append(randomcloseval)
 
 for j in range(size-1):
- upperbound=randomopenval-(randomopenval*0.095)
- lowerbound=randomopenval+(randomopenval*0.095)
+ upperbound=randomopenval+(randomopenval*0.095)
+ lowerbound=randomopenval-(randomopenval*0.095)
 
  randomcloseval=round(random.uniform(upperbound,lowerbound),2)
  randomopenval=round(random.uniform(upperbound,lowerbound),2)
@@ -89,9 +59,9 @@ for j in range(size-1):
  highlist.append(randomhighval)
  lowlist.append(randomlowval)
 df=pd.DataFrame(list(zip(datelist,openlist,highlist,lowlist,closelist)),columns=['Date','Open','High','Low','Close'])
-df.to_excel('RANDOM_STOCK_DATA.xlsx')
+df.to_csv('RANDOM_STOCK_DATA.csv')
 profrep=pp.ProfileReport(df)
-profrep.to_file('RSD_PROFILING.html')
+#profrep.to_html('RSD_PROFILING.html')
 
 
 plt.plot(df['Date'],df['Open'])
@@ -245,6 +215,8 @@ mpdf.image('DvL.png',100,150,100,100)
 mpdf.text(70,260,'Scatter Plot and Line plot')
 
 mpdf.output('PDF_REPORT.PDF','F')
+
+
 
 
 
